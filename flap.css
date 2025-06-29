@@ -1,0 +1,108 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #70c5ce;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+
+#welcomeScreen {
+  position: fixed;        /* full viewport */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0c0c0c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;   /* align content to top */
+  z-index: 10;
+  padding-top: 0;                /* no padding above title */
+}
+
+/* Gradient text for FLAPJACKS title */
+#gameTitle {
+  font-family: 'Fredoka One', cursive;
+  font-size: 10vw !important;
+  font-weight: 900 !important;
+  text-align: center !important;
+  margin: 0 !important;
+  padding-top: 30px !important;
+  letter-spacing: 0.1em !important;
+  user-select: none !important;
+  white-space: nowrap;
+  width: 100%;
+  line-height: 1;
+  
+  /* Gradient color */
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  text-shadow:
+    3px 3px 0 rgba(0,0,0,0.5),
+    6px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Choose your character text */
+#chooseCharacterText {
+  color: white;
+  font-size: 1.8rem;
+  margin-top: 100px;
+  margin-bottom: 0; /* space below title */
+  user-select: none;
+}
+
+
+#characterGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* bigger boxes */
+  gap: 25px;
+  width: 90%;
+  max-width: 900px;
+  justify-items: center;
+  margin-top: 40px;             /* space below title */
+}
+
+.characterOption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff33;
+  border-radius: 10px;
+  padding: 20px;               /* bigger padding */
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s;
+  user-select: none;
+}
+
+.characterOption:hover {
+  transform: scale(1.05);
+  background-color: #ffffff55;
+}
+
+.characterOption img {
+  width: 120px;                /* bigger images */
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.characterOption span {
+  color: white;
+  margin-top: 5px;
+  text-align: center;
+}
+
+canvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background: url('images/sky.png') no-repeat center center;
+  background-size: cover;
+}
